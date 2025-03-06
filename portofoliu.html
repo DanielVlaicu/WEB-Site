@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNF 2025 - Media</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    h1, h2, h3 {
+      color: #009688;
+      text-align: center;
+      margin-top: 0;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #009688;
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .service {
+      width: calc(33.33% - 40px);
+      margin-right: 20px;
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .service h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      text-align: center;
+      cursor: pointer;
+    }
+    .service p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    .details {
+      display: none;
+      margin-top: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #009688;
+      transition: all 0.3s ease;
+    }
+    .service.active .details {
+      display: block;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #009688;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+	<img src="imagini/poza.png" width="140" height="80">
+      
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="despre-noi.html">About us</a></li>
+          <li><a href="servicii.html">Services</a></li>
+          <li><a href="portofoliu.html">Media</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="portofoliu">
+    <div class="container">
+      <h2>Media</h2>
+      <p>Memories captured by our photographs</p>
+      <div class="gallery">
+        <img src="imagini/image1.jpg" alt="Fotografie eveniment 1" onClick="showImage('imagini/image1.jpg')">
+        <img src="imagini/image2.jpg" alt="Fotografie eveniment 2" onClick="showImage('imagini/image2.jpg')">
+        <img src="imagini/image3.jpg" alt="Fotografie eveniment 3" onClick="showImage('imagini/image3.jpg')">
+        <img src="imagini/image4.jpg" alt="Fotografie eveniment 4" onClick="showImage('imagini/image4.jpg')">
+        <img src="imagini/image5.jpg" alt="Fotografie eveniment 5" onClick="showImage('imagini/image5.jpg')">
+        <img src="imagini/image6.jpg" alt="Fotografie eveniment 6" onClick="showImage('imagini/image6.jpg')">
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; SNF2025 | Vlaicu Daniel</p>
+    </div>
+  </footer>
+  <div class="lightbox" onClick="closeImage()">
+    <img id="lightbox-img" src="" alt="Imagine mare">
+  </div>
+  <script>
+    function showImage(src) {
+      var lightbox = document.querySelector('.lightbox');
+      var lightboxImg = document.querySelector('#lightbox-img');
+
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeImage() {
+      var lightbox = document.querySelector('.lightbox');
+
+      lightbox.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
